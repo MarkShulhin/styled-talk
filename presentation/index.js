@@ -1,8 +1,16 @@
 import React, { Component } from "react";
-import styled, { css, createGlobalStyle, ThemeProvider } from "styled-components";
+import styled, { css, createGlobalStyle, ThemeProvider, keyframes } from "styled-components";
 
 // Images
-import SCStats from "../assets/SCStat.png";
+import SCStats from "../assets/SCStats.png";
+import SCUSED from "../assets/SCUSED.png";
+import UPSA from "../assets/whoami.png";
+import PREPROC from "../assets/preproc.png";
+import CSSINJS from "../assets/css-in-js.png";
+import BTN from "../assets/btn.png";
+import BTNSTYLED from "../assets/btn-styled.png";
+import HEAD from "../assets/head.png";
+import PERF from "../assets/performance.png";
 
 // Import Spectacle Core tags
 import {
@@ -52,6 +60,9 @@ const theme = createTheme(
 const gradient =
   "linear-gradient(20deg, rgb(219, 112, 147), rgb(218, 163, 87))";
 
+
+
+
 export default class Presentation extends Component {
   render() {
     return (
@@ -63,12 +74,14 @@ export default class Presentation extends Component {
         theme={theme}
       >
         <Slide transition={["zoom"]} bgImageStyle={gradient}>
-        <Notes>
-          <h4>Notes</h4>
-          <ol>
-            <li>Hello words</li>
-            <li>Для начала хочу вернуться к истокам</li>
-          </ol>
+          <Notes>
+            <h4>Notes</h4>
+            <ol>
+              <li>Hello words</li>
+              <li>Все вопросы, пожалуйста, в конце доклада</li>
+              <li>Постараюсь показать вам более обширную картину</li>
+              <li>Поэтому не все аспекты будут раскрыты в деталях</li>
+            </ol>
           </Notes>
           <Heading size={1} fit caps lineHeight={1} textColor="secondary">
             Intro to styled-components{" "}
@@ -80,66 +93,74 @@ export default class Presentation extends Component {
         </Slide>
         <Slide transition={["fade"]} textColor="tertiary">
           <Notes>
-          <h4>Notes</h4>
-          <ol>
-            <li>CSS это важно</li>
-            <li>CSS это сложно</li>
-            <li>Если неправильно пользоваться, то будет как слева</li>
-          </ol>
+            <h4>Notes</h4>
+            <ol>
+              <li>Выходец из внешних курсов, а потом из лабы</li>
+              <li>В продакшне уже чуть больше чем полгода</li>
+              <li>Сейчас работаю в команде которая создает библиотеку компонентов на реакте</li>
+              <li>И для стилизации мы используем  styled-components, с которым сегодня я постараюсь вас познакомить</li>
+              <li>Для начала хочу вернуться к истокам</li>
+            </ol>
+          </Notes>
+          <Heading size={5} lineHeight={1} textColor="secondary">
+            Whoami
+          </Heading>
+          <Image
+            src={UPSA}
+            height={327}
+            width={1098}
+          />
+        </Slide>
+        <Slide transition={["fade"]} textColor="tertiary">
+          <Notes>
+            <h4>Notes</h4>
+            <ol>
+              <li>CSS это важно</li>
+              <li>CSS это сложно</li>
+              <li>Иногда мы хотим сделать одно, а получается совсем другое</li>
+            </ol>
           </Notes>
           <Image
-            src="https://img.devrant.com/devrant/rant/r_458409_aXZph.gif"
+            src="http://66.media.tumblr.com/fb7b78c039f84f6587c718d5b88db31b/tumblr_inline_o4e81fGmxK1t9bsnt_500.gif"
             height={600}
-            width={800}
+            width={900}
           />
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
           <Notes>
-          <h4>Notes</h4>
-          <ol>
-            <li>Почти все проблемы походят от глобального скоупа</li>
-            <li>Большой проект - много мертвого кода</li>
-            <li>Который сложно поддерживать</li>
-            <li>Как вы думаете какие решения помогут решить эти проблемы?</li>
-          </ol>
+            <h4>Notes</h4>
+            <ol>
+              <li>Почти все проблемы походят от глобального скоупа</li>
+              <li>Большой проект - много мертвого кода</li>
+              <li>Который сложно поддерживать</li>
+              <li>Как вы думаете какие решения помогут решить эти проблемы?</li>
+            </ol>
           </Notes>
           <Heading size={6} textColor="secondary" caps>
             Problems with CSS
           </Heading>
           <List>
-            <ListItem>Global namespacing</ListItem>
-            <ListItem>Dead code elimination</ListItem>
-            <ListItem>Code maitainability</ListItem>
-            <ListItem>Code readability</ListItem>
+            <Appear><ListItem>Global namespacing</ListItem></Appear>
+            <Appear><ListItem>Dead code elimination</ListItem></Appear>
+            <Appear><ListItem>Code maitainability</ListItem></Appear>
+            <Appear><ListItem>Code readability</ListItem></Appear>
           </List>
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
           <Notes>
-          <h4>Notes</h4>
-          <ol>
-            <li>Набор правил для структурирования кода</li>
-            <li>Рассмотрим BEM как самый популярный в СНГ</li>
-          </ol>
+            <h4>Notes</h4>
+            <ol>
+              <li>Набор правил для структурирования кода</li>
+              <li>Рассмотрим BEM как самый популярный в СНГ</li>
+              <li>и в частности, в Епаме</li>
+            </ol>
           </Notes>
           <Heading size={6} textColor="secondary" caps>
-            Code standards
+            Code Methodologies
           </Heading>
           <Text fit caps>
             smaccs | bem | atomic | oocss
           </Text>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="primary" textColor="secondary">
-          <Notes>
-          <h4>Notes</h4>
-          <ol>
-            <li>Создали ребята из Яндекса</li>
-            <li>На примере обычная кнопка и главная</li>
-          </ol>
-          </Notes>
-          <Heading size={6} textColor="secondary" caps>
-            BEM
-          </Heading>
-          <CodePane lang="javascript" source={examples.bem} textSize="25px" />
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
           <Notes>
@@ -155,35 +176,35 @@ export default class Presentation extends Component {
             BEM Pros
           </Heading>
           <List>
-              <ListItem>Easy to setup</ListItem>
-              <ListItem>Independent and reusable</ListItem>
-              <ListItem>Classnames isolation</ListItem>
-              <ListItem>Good performance</ListItem>
-              <ListItem>Testing/Linting</ListItem>
+            <Appear><ListItem>Easy to setup</ListItem></Appear>
+            <Appear><ListItem>Independent and reusable</ListItem></Appear>
+            <Appear><ListItem>Classnames isolation</ListItem></Appear>
+            <Appear><ListItem>Good performance</ListItem></Appear>
+            <Appear><ListItem>Testing/Linting</ListItem></Appear>
           </List>
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
           <Notes>
-              <h4>Notes</h4>
-              <ol>
-                <li>Как плюс так и минус</li>
-                <li>Самое сложное в программировании</li>
-                <li>Можно, но есть реализации и по-лучше</li>
-                <li>Много кода</li>
-              </ol>
+            <h4>Notes</h4>
+            <ol>
+              <li>Как плюс так и минус</li>
+              <li>Самое сложное все таки осталось и это нужно делать</li>
+              <li>Можно, но есть реализации и по-лучше</li>
+              <li>Много кода</li>
+            </ol>
           </Notes>
           <Heading size={6} textColor="secondary" caps>
             BEM Cons
           </Heading>
           <List>
-              <ListItem>Strict structure</ListItem>
-              <ListItem>Naming is hard</ListItem>
-              <ListItem>Theming</ListItem>
-              <ListItem>Bundle size</ListItem>
+            <Appear><ListItem>Strict structure</ListItem></Appear>
+            <Appear><ListItem>Naming is hard</ListItem></Appear>
+            <Appear><ListItem>Theming</ListItem></Appear>
+            <Appear><ListItem>A lot of code</ListItem></Appear>
           </List>
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="secondary">
-          <Image src="https://psdtowp.net/modules/blog/uploads/image/css-preprocessors.jpg" />
+          <Image src={PREPROC} height={312} width={732} />
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="secondary">
           <Notes>
@@ -198,24 +219,24 @@ export default class Presentation extends Component {
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
           <Notes>
-              <h4>Notes</h4>
-              <ol>
-                <li>Много фич</li>
-                <li>Меньше кода</li>
-                <li>Легко изучить</li>
-                <li>Как в один файл так и под компоненты</li>
-                <li>Хорошь в паре с BEM</li>
-              </ol>
+            <h4>Notes</h4>
+            <ol>
+              <li>Много фич</li>
+              <li>Меньше кода</li>
+              <li>Легко изучить</li>
+              <li>Как в один файл так и под компоненты</li>
+              <li>Хорошь в паре с BEM</li>
+            </ol>
           </Notes>
           <Heading size={6} textColor="secondary" caps>
             Pros
           </Heading>
           <List>
-              <ListItem>Variables, mixins etc.</ListItem>
-              <ListItem>Less/tidier code with nesting</ListItem>
-              <ListItem>Low learning curve</ListItem>
-              <ListItem>Compile the way you need</ListItem>
-              <ListItem>Works with BEM</ListItem>
+            <Appear><ListItem>Variables, mixins etc.</ListItem></Appear>
+            <Appear><ListItem>Less/tidier code with nesting</ListItem></Appear>
+            <Appear><ListItem>Low learning curve</ListItem></Appear>
+            <Appear><ListItem>Compile the way you need</ListItem></Appear>
+            <Appear><ListItem>Works with BEM</ListItem></Appear>
           </List>
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
@@ -232,10 +253,10 @@ export default class Presentation extends Component {
             Cons
           </Heading>
           <List>
-              <ListItem>More dependencies</ListItem>
-              <ListItem>You still have to name things</ListItem>
-              <ListItem>Nesting hell</ListItem>
-              <ListItem>Additional settings for components</ListItem>
+            <Appear><ListItem>More dependencies</ListItem></Appear>
+            <Appear><ListItem>You still have to name things</ListItem></Appear>
+            <Appear><ListItem>Nesting hell</ListItem></Appear>
+            <Appear><ListItem>Additional settings for components</ListItem></Appear>
           </List>
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="secondary">
@@ -252,11 +273,12 @@ export default class Presentation extends Component {
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="secondary">
           <Notes>
-              <h4>Notes</h4>
-              <ol>
-                <li>Не путать с CSS-In-JS</li>
-                <li>Невольно вспоминается одна картника</li>
-              </ol>
+            <h4>Notes</h4>
+            <ol>
+              <li>Не путать с CSS-In-JS</li>
+              <li>В свое время было модно, но недолго</li>
+              <li>Невольно вспоминается одна картника</li>
+            </ol>
           </Notes>
           <ComponentPlayground code={snippets.inlineStyles} textSize="26px" />
         </Slide>
@@ -278,30 +300,58 @@ export default class Presentation extends Component {
             There is no:
           </Heading>
           <List>
-            <ListItem>Media queries</ListItem>
-            <ListItem>Pseudo selectors</ListItem>
-            <ListItem>Vendor prefixes</ListItem>
-            <ListItem>Animations</ListItem>
-            <ListItem>Debugging</ListItem>
+            <Appear><ListItem>Media queries</ListItem></Appear>
+            <Appear><ListItem>Pseudo selectors</ListItem></Appear>
+            <Appear><ListItem>Vendor prefixes</ListItem></Appear>
+            <Appear><ListItem>Animations</ListItem></Appear>
+            <Appear><ListItem>Debugging</ListItem></Appear>
           </List>
+        </Slide>
+        <Slide
+          transition={["fade"]}
+          textColor="secondary"
+        >
+          <Notes>
+            <h4>Notes</h4>
+            <ol>
+              <li>Большинство похожи на инлайн стили</li>
+            </ol>
+          </Notes>
+          <Image src={CSSINJS} />
+        </Slide>
+        <Slide
+          transition={["fade"]}
+          textColor="secondary"
+        >
+          <Notes>
+            <h4>Notes</h4>
+            <ol>
+              <li>Большинство похожи на инлайн стили</li>
+            </ol>
+          </Notes>
+          <Heading size={6} textColor="secondary">
+            React-JSS
+          </Heading>
+          <CodePane lang="javascript" source={examples.cssInJs} textSize="17px" />
         </Slide>
         <Slide
           transition={["fade"]}
           bgImageStyle={gradient}
           textColor="secondary"
         >
-        <Notes>
-          <h4>Notes</h4>
-          <ol>
-            <li>CSS-In-JS</li>
-            <li>Их много и они похожи</li>
-            <li>Макс Штойбер и Гленн Маддэрн</li>
-          </ol>
-        </Notes>
+          <Notes>
+            <h4>Notes</h4>
+            <ol>
+              <li>CSS-In-JS</li>
+              <li>Их много и они похожи</li>
+              <li>Макс Штойбер и Гленн Маддэрн</li>
+            </ol>
+          </Notes>
           <Image src="https://www.styled-components.com/static/logo.png" />
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="secondary">
-          <Image src={SCStats} width={1380} height={380} />
+          <Image src={SCUSED} width={1000} height={240} />
+          <Image src={SCStats} width={949} height={110} />
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="secondary">
           <Heading size={6} textColor="secondary" margin="0 0 50px 0">
@@ -309,15 +359,43 @@ export default class Presentation extends Component {
           </Heading>
           <Code margin="10px 0 0 0">npm install styled-components --save</Code>
         </Slide>
+        <Slide
+          transition={["fade"]}
+          textColor="secondary"
+        >
+          <CodePane lang="javascript" source={examples.styled} textSize="22px" />
+          <Image
+            src={BTN}
+          />
+        </Slide>
+        <Slide
+          transition={["fade"]}
+          textColor="secondary"
+        >
+          <Heading size={4} fit>How does it work?</Heading>
+          <Appear>
+            <Image src={BTNSTYLED} margin="0 0 50px 0" />
+          </Appear>
+          <Appear>
+            <Image src={HEAD} />
+          </Appear>
+        </Slide>
+        <Slide
+          transition={["fade"]}
+          textColor="secondary"
+        >
+          <Heading size={4} >Performance?</Heading>
+          <Image src={PERF} />
+        </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="secondary" padding={0}>
           <Notes>
-          <h4>Demo points</h4>
-          <ol>
-            <li>How it works!!</li>
-            <li>hover</li>
-            <li>media</li>
-            <li>element selector</li>
-          </ol>
+            <h4>Demo points</h4>
+            <ol>
+              <li>How it works!!</li>
+              <li>hover</li>
+              <li>media</li>
+              <li>element selector</li>
+            </ol>
           </Notes>
           <Heading size={6} textColor="secondary">
             Button example
@@ -328,16 +406,25 @@ export default class Presentation extends Component {
           />
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="secondary" padding={0}>
-        <Heading size={6} textColor="secondary">
+          <Heading size={6} textColor="secondary">
             Server side rendering
           </Heading>
           <CodePane lang="javascript" source={examples.ssr} textSize="23px" />
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="secondary" padding={0}>
-        <Heading size={6} textColor="secondary">
+          <Heading size={6} textColor="secondary">
+            Animations
+          </Heading>
+          <ComponentPlayground
+            code={snippets.animation}
+            scope={{ styled, keyframes, }}
+          />
+        </Slide>
+        <Slide transition={["fade"]} bgColor="primary" textColor="secondary" padding={0}>
+          <Heading size={6} textColor="secondary">
             Theming
           </Heading>
-          <ComponentPlayground 
+          <ComponentPlayground
             code={snippets.theming}
             scope={{ styled, createGlobalStyle, css, ThemeProvider }}
           />
@@ -367,33 +454,33 @@ export default class Presentation extends Component {
             Tooling
           </Heading>
           <List>
-              <ListItem>Linting(Stylelint)</ListItem>
-              <ListItem>Syntax highlights</ListItem>
-              <ListItem>Babel plugins</ListItem>
-              <ListItem>Typescript plugin</ListItem>
+            <Appear><ListItem>Linting(Stylelint)</ListItem></Appear>
+            <Appear><ListItem>Syntax highlights</ListItem></Appear>
+            <Appear><ListItem>Babel plugins</ListItem></Appear>
+            <Appear><ListItem>Typescript plugin</ListItem></Appear>
           </List>
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-        <Notes>
-        <h4>Notes</h4>
-        <ol>
-          <li>Огромное множество возможностей</li>
-          <li>Много фич из коробки</li>
-          <li>Легче втянуться новому члену команды</li>
-          <li>Удаляем компонент - удаляем CSS</li>
-        </ol>
-      </Notes>
+          <Notes>
+            <h4>Notes</h4>
+            <ol>
+              <li>Огромное множество возможностей</li>
+              <li>Много фич из коробки</li>
+              <li>Легче втянуться новому члену команды</li>
+              <li>Удаляем компонент - удаляем CSS</li>
+            </ol>
+          </Notes>
           <Heading size={6} textColor="secondary" caps>
             Pros
           </Heading>
           <List>
-              <ListItem>All of the JS magic!</ListItem>
-              <ListItem>SSR support</ListItem>
-              <ListItem>Theming out of the box</ListItem>
-              <ListItem>Flow/Typescript support</ListItem>
-              <ListItem>Autoprefix out of the box</ListItem>
-              <ListItem>Newcomers friednly</ListItem>
-              <ListItem>No dead code</ListItem>
+            <Appear><ListItem>All of the JS magic!</ListItem></Appear>
+            <Appear><ListItem>SSR support</ListItem></Appear>
+            <Appear><ListItem>Theming out of the box</ListItem></Appear>
+            <Appear><ListItem>Flow/Typescript support</ListItem></Appear>
+            <Appear><ListItem>Autoprefix out of the box</ListItem></Appear>
+            <Appear><ListItem>No dead code</ListItem></Appear>
+            <Appear><ListItem>Namings is not that hard anymore</ListItem></Appear>
           </List>
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
@@ -409,9 +496,9 @@ export default class Presentation extends Component {
             Cons
           </Heading>
           <List>
-              <ListItem>New mindset to get used to</ListItem>
-              <ListItem>Another thing to teach</ListItem>
-              <ListItem>Beware of NaN's</ListItem>
+            <Appear><ListItem>New mindset to get used to</ListItem></Appear>
+            <Appear><ListItem>Another thing to teach</ListItem></Appear>
+            <Appear><ListItem>Beware of NaN's</ListItem></Appear>
           </List>
         </Slide>
         <Slide
@@ -420,7 +507,7 @@ export default class Presentation extends Component {
           textColor="primary"
         >
           <Heading size={4} textColor="primary">
-            Thank you!
+            Thank you! ❤  ️
           </Heading>
         </Slide>
       </Deck>
