@@ -547,6 +547,7 @@ export default class Presentation extends Component {
           <Heading size={4} textColor="primary">
             Thank you! ❤  ️
           </Heading>
+          Slides: <Link href="styled-talk.surge.sh" textColor="primary" style={{textDecoration:"underline"}}>styled-talk.surge.sh</Link>
         </Slide>
       </Deck>
     );
