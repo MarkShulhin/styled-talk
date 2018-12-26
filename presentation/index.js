@@ -11,6 +11,7 @@ import BTN from "../assets/btn.png";
 import BTNSTYLED from "../assets/btn-styled.png";
 import HEAD from "../assets/head.png";
 import PERF from "../assets/performance.png";
+import BEM from '../assets/bem1.png';
 
 // Import Spectacle Core tags
 import {
@@ -156,11 +157,14 @@ export default class Presentation extends Component {
             </ol>
           </Notes>
           <Heading size={6} textColor="secondary" caps>
-            Code Methodologies
+            CSS Methodologies
           </Heading>
           <Text fit caps>
             smaccs | bem | atomic | oocss
           </Text>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
+          <Image src={BEM} width={800} />
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
           <Notes>
@@ -315,6 +319,8 @@ export default class Presentation extends Component {
             <h4>Notes</h4>
             <ol>
               <li>Большинство похожи на инлайн стили</li>
+              <li>Перед styled-compoents, рассмотрим пример другой библиотеки</li>
+              <li>Прежде чем перейдем, кто знает что такое props в реакт?</li>
             </ol>
           </Notes>
           <Image src={CSSINJS} />
@@ -326,7 +332,25 @@ export default class Presentation extends Component {
           <Notes>
             <h4>Notes</h4>
             <ol>
-              <li>Большинство похожи на инлайн стили</li>
+              <li>Один из основных механизмов передачи данных</li>
+              <li>Работает так же как и аттрибуты у хтмл елементов</li>
+              <li>Только у браузера поведение определено, а мы логику пишем внутри компоненты</li>
+            </ol>
+          </Notes>
+          <Heading size={6} textColor="secondary">
+            React props
+        </Heading>
+          <ComponentPlayground code={snippets.react} scope={{ React }} />
+        </Slide>
+        <Slide
+          transition={["fade"]}
+          textColor="secondary"
+        >
+          <Notes>
+            <h4>Notes</h4>
+            <ol>
+              <li>Уже больше возможностей</li>
+              <li>Но все еще костыльно</li>
             </ol>
           </Notes>
           <Heading size={6} textColor="secondary">
@@ -342,8 +366,6 @@ export default class Presentation extends Component {
           <Notes>
             <h4>Notes</h4>
             <ol>
-              <li>CSS-In-JS</li>
-              <li>Их много и они похожи</li>
               <li>Макс Штойбер и Гленн Маддэрн</li>
             </ol>
           </Notes>
@@ -363,6 +385,12 @@ export default class Presentation extends Component {
           transition={["fade"]}
           textColor="secondary"
         >
+          <Notes>
+            <h4>Demo points</h4>
+            <ol>
+              <li>Возвращает обычный Реакт компонент</li>
+            </ol>
+          </Notes>
           <CodePane lang="javascript" source={examples.styled} textSize="22px" />
           <Image
             src={BTN}
@@ -391,10 +419,14 @@ export default class Presentation extends Component {
           <Notes>
             <h4>Demo points</h4>
             <ol>
-              <li>How it works!!</li>
               <li>hover</li>
-              <li>media</li>
               <li>element selector</li>
+              <li>
+                @media (min-width: 768px) {'{'}
+                color: green;
+                {'}'}
+              </li>
+              <li>В документации много примеров со всем СSS</li>
             </ol>
           </Notes>
           <Heading size={6} textColor="secondary">
@@ -404,6 +436,12 @@ export default class Presentation extends Component {
             code={snippets.styledComponent}
             scope={{ styled, createGlobalStyle, css }}
           />
+        </Slide>
+        <Slide transition={["fade"]} bgColor="primary" textColor="secondary" padding={0}>
+          <Heading size={6} textColor="secondary">
+            CSS function
+          </Heading>
+          <CodePane lang="javascript" source={examples.mixins} textSize="19px" />
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="secondary" padding={0}>
           <Heading size={6} textColor="secondary">

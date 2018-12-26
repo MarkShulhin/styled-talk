@@ -5,6 +5,7 @@ import ssr from './ssr';
 import tests from './tests';
 import semantics from './semantics';
 import styled from './styled';
+import mixins from './mixins'
 
 export default {
     sass,
@@ -14,4 +15,5 @@ export default {
     tests,
     semantics,
     styled,
+    mixins,
 }

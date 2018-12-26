@@ -1,5 +1,5 @@
 export default `
-const getPrimary = ({ primary }) => primary && css\`
+const getPrimary = (props) => props.primary && css\`
   background: palevioletred;
   color: white;
 \`;
