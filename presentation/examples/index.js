@@ -11,6 +11,7 @@ import hiw from './hiw'
 import tags from './tags'
 import cardCss from './card-css';
 import cardHtml from './card-html';
+import first from './first';
 
 export default {
     sass,
@@ -26,4 +27,5 @@ export default {
     tags,
     cardCss,
     cardHtml,
+    first,
 }

@@ -363,6 +363,9 @@ export default class Presentation extends Component {
           <Heading size={6} textColor="secondary">
             Your first styled component
           </Heading>
+          <CodePane lang="javascript" source={examples.first} textSize="30px" />
+        </Slide>
+        <Slide transition={["fade"]} bgColor="primary" textColor="secondary" padding={0}>
           <ComponentPlayground
             code={snippets.styledBase}
             scope={{ styled, keyframes, }}
@@ -405,7 +408,7 @@ export default class Presentation extends Component {
           transition={["fade"]}
           textColor="secondary"
         >
-          <CodePane lang="html" source={examples.hiw} textSize="19px" />
+          <CodePane lang="html" source={examples.hiw} textSize="25px" />
         </Slide>
         <Slide
           transition={["fade"]}
