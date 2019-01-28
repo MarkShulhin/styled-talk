@@ -1,13 +1,13 @@
 export default `
 function Welcome(props) {
   return (
-    <h1>
+    <h1 style={{ color: props.color}}>
       Hello, {props.name}
     </h1>
   );
 }
   
 render(
- <Welcome name="EPAM" />
+ <Welcome name="EPAM" color="black"/>
 );
 `;
