@@ -1,30 +1,30 @@
 export default `
-// button.js
-import React from 'react';
-import cx from 'classanames';
-
-const Button = ({ primary, children }) => (
-  <button
-    className={cx({
-        'block__element': true,
-        'block__element--primary': primary,
-    })}
-  >
-    {children}
-  </button>
-);
-
 // .scss
-.block__element {
-  background: transparent;
-  color: palevioletred;
-  border: 2px solid palevioletred;
-  margin: 0.5em 1em;
-  padding: 0.25em 1em;
+.c-card {
+  display: inline-block;
+  width: 100%;
+  // ...
 
-  &--primary {
-    background: palevioletred;
-    color: white;
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 20px -15px rgba(0, 0, 0, 0.3);
   }
+
+  &__header {
+    //..
+  }
+  
+  &__image {
+    max-width: 100%;
+  }
+ 
+  &__body {
+    padding: 20px;
+  }
+    
+  &__title {
+    //..  
+  }
+  ....
 }
 `

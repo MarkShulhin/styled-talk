@@ -19,9 +19,7 @@ const styles = {
 }
 
 const Button = ({classes, children}) => (
-  <button className={classes.myButton}>
-    <span className={classes.myLabel}>{children}</span>
-  </button>
+  <button className={classes.myButton}>{children}</button>
 )
 
 const StyledButton = injectSheet(styles)(Button)
