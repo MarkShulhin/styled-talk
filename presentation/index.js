@@ -5,13 +5,16 @@ import styled, { css, createGlobalStyle, ThemeProvider, keyframes } from "styled
 import SCStats from "../assets/SCStats.png";
 import SCUSED from "../assets/SCUSED.png";
 import UPSA from "../assets/whoami.png";
-import PREPROC from "../assets/preproc.png";
+import PREPROC from "../assets/preproc.jpeg";
 import CSSINJS from "../assets/css-in-js.png";
 import BTN from "../assets/btn.png";
 import BTNSTYLED from "../assets/btn-styled.png";
 import HEAD from "../assets/head.png";
 import PERF from "../assets/performance.png";
-import BEM from '../assets/bem1.png';
+import BEM from '../assets/bem.png';
+import cardExample from '../assets/bem-sass-example.png';
+import reactNative from '../assets/react-native.png';
+
 
 // Import Spectacle Core tags
 import {
@@ -78,7 +81,6 @@ export default class Presentation extends Component {
           <Notes>
             <h4>Notes</h4>
             <ol>
-              <li>Hello words</li>
               <li>Все вопросы, пожалуйста, в конце доклада</li>
               <li>Постараюсь показать вам более обширную картину</li>
               <li>Поэтому не все аспекты будут раскрыты в деталях</li>
@@ -121,6 +123,9 @@ export default class Presentation extends Component {
               <li>Иногда мы хотим сделать одно, а получается совсем другое</li>
             </ol>
           </Notes>
+          <Heading size={5} lineHeight={1} textColor="secondary">
+            CSS IS HARD
+          </Heading>
           <Image
             src="http://66.media.tumblr.com/fb7b78c039f84f6587c718d5b88db31b/tumblr_inline_o4e81fGmxK1t9bsnt_500.gif"
             height={600}
@@ -134,7 +139,7 @@ export default class Presentation extends Component {
               <li>Почти все проблемы походят от глобального скоупа</li>
               <li>Большой проект - много мертвого кода</li>
               <li>Который сложно поддерживать</li>
-              <li>Как вы думаете какие решения помогут решить эти проблемы?</li>
+              <li>Как вы думаете какие на сегодняшний день существуют варианты решения этих проблем?</li>
             </ol>
           </Notes>
           <Heading size={6} textColor="secondary" caps>
@@ -164,62 +169,54 @@ export default class Presentation extends Component {
           </Text>
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
+          <Notes>
+            <h4>Notes</h4>
+            <ol>
+              <li>Рассмотрим только методологию именования</li>
+              <li>Бем предлагает единые правила написания кода</li>
+              <li>помогает его масштабировать и повторно использовать</li>
+              <li>Бем является стандартом де-факто современной разработки интерфейсов</li>
+              <li>Как ни автоматизируй, многое в БЭМе приходится делать руками, и возможны конфликты.</li>
+            </ol>
+          </Notes>
           <Image src={BEM} width={800} />
         </Slide>
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
+        <Slide transition={["fade"]} bgColor="primary" textColor="secondary">
           <Notes>
             <h4>Notes</h4>
             <ol>
-              <li>Просто берем и пишем</li>
-              <li>Можно переносить из проекта в проект</li>
-              <li>Решается проблема глобал скоупа</li>
-              <li>Большая экосистема инструментов</li>
+              <li> это программа, которая имеет свой собственный синтаксис (syntax), но может сгенерировать из него CSS код</li>
+              <li>Задача: предоставление удобных синтаксических конструкций для разработчика, чтобы упростить, и тем самым, ускорить разработку и поддержу стилей в проектах.
+              </li>
+              <li>Для использования CSS препроцессора нужно установить CSS компилятор</li>
+              <li>Большинство из них расширяет функционал чистого CSS, добавляя такие опции как: примеси, вложенные правила, селекторы наследования и др</li>
             </ol>
           </Notes>
-          <Heading size={6} textColor="secondary" caps>
-            BEM Pros
+          <Heading size={5} lineHeight={1} textColor="secondary">
+            CSS preprocessors
           </Heading>
-          <List>
-            <Appear><ListItem>Easy to setup</ListItem></Appear>
-            <Appear><ListItem>Independent and reusable</ListItem></Appear>
-            <Appear><ListItem>Classnames isolation</ListItem></Appear>
-            <Appear><ListItem>Good performance</ListItem></Appear>
-            <Appear><ListItem>Testing/Linting</ListItem></Appear>
-          </List>
+          <Image src={PREPROC} height={523} width={1200} />
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
           <Notes>
             <h4>Notes</h4>
             <ol>
-              <li>Как плюс так и минус</li>
-              <li>Самое сложное все таки осталось и это нужно делать</li>
-              <li>Можно, но есть реализации и по-лучше</li>
-              <li>Много кода</li>
+              <li>Example Card component</li>
             </ol>
           </Notes>
-          <Heading size={6} textColor="secondary" caps>
-            BEM Cons
+          <Heading size={5} lineHeight={1} textColor="secondary">
+            Card component
           </Heading>
-          <List>
-            <Appear><ListItem>Strict structure</ListItem></Appear>
-            <Appear><ListItem>Naming is hard</ListItem></Appear>
-            <Appear><ListItem>Theming</ListItem></Appear>
-            <Appear><ListItem>A lot of code</ListItem></Appear>
-          </List>
+          <Image src={cardExample} width={500} />
+        </Slide>
+        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
+          <CodePane lang="html" source={examples.cardHtml} textSize="17px" />
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="secondary">
-          <Image src={PREPROC} height={312} width={732} />
+          <CodePane lang="css" source={examples.cardCss} textSize="17px" />
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="secondary">
-          <Notes>
-            <h4>Notes</h4>
-            <ol>
-              <li>Все те же две кнопки</li>
-              <li>Логика отображения в компоненте</li>
-              <li>Nesting классов</li>
-            </ol>
-          </Notes>
-          <CodePane lang="javascript" source={examples.sass} textSize="17px" />
+          <CodePane lang="scss" source={examples.sass} textSize="14px" />
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
           <Notes>
@@ -233,34 +230,14 @@ export default class Presentation extends Component {
             </ol>
           </Notes>
           <Heading size={6} textColor="secondary" caps>
-            Pros
+            More features
           </Heading>
           <List>
-            <Appear><ListItem>Variables, mixins etc.</ListItem></Appear>
-            <Appear><ListItem>Less/tidier code with nesting</ListItem></Appear>
-            <Appear><ListItem>Low learning curve</ListItem></Appear>
-            <Appear><ListItem>Compile the way you need</ListItem></Appear>
-            <Appear><ListItem>Works with BEM</ListItem></Appear>
-          </List>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Notes>
-            <h4>Notes</h4>
-            <ol>
-              <li>Поднастроить вебпак</li>
-              <li>Подключить пару-пар лоадеров</li>
-              <li>В плохих руках вложенность улетает на дно</li>
-              <li>Еще немного вебпака для компонентов</li>
-            </ol>
-          </Notes>
-          <Heading size={6} textColor="secondary" caps>
-            Cons
-          </Heading>
-          <List>
-            <Appear><ListItem>More dependencies</ListItem></Appear>
-            <Appear><ListItem>You still have to name things</ListItem></Appear>
-            <Appear><ListItem>Nesting hell</ListItem></Appear>
-            <Appear><ListItem>Additional settings for components</ListItem></Appear>
+            <Appear><ListItem>Nesting</ListItem></Appear>
+            <Appear><ListItem>Variables</ListItem></Appear>
+            <Appear><ListItem>Imports</ListItem></Appear>
+            <Appear><ListItem>Mixins</ListItem></Appear>
+            <Appear><ListItem>Custom logic</ListItem></Appear>
           </List>
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="secondary">
@@ -349,12 +326,13 @@ export default class Presentation extends Component {
           <Notes>
             <h4>Notes</h4>
             <ol>
+              <li>Лишь один пример из многих, сторонняя библиотека React-JSS</li>
               <li>Уже больше возможностей</li>
               <li>Но все еще костыльно</li>
             </ol>
           </Notes>
           <Heading size={6} textColor="secondary">
-            React-JSS
+            CSS IN JS: React-JSS
           </Heading>
           <CodePane lang="javascript" source={examples.cssInJs} textSize="17px" />
         </Slide>
@@ -380,6 +358,21 @@ export default class Presentation extends Component {
             Installation
           </Heading>
           <Code margin="10px 0 0 0">npm install styled-components --save</Code>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="primary" textColor="secondary" padding={0}>
+          <Heading size={6} textColor="secondary">
+            Your first styled component
+          </Heading>
+          <ComponentPlayground
+            code={snippets.styledBase}
+            scope={{ styled, keyframes, }}
+          />
+        </Slide>
+        <Slide transition={["fade"]} bgColor="primary" textColor="secondary" padding={0}>
+          <Heading size={6} textColor="secondary">
+            Tagged Template Literals
+          </Heading>
+          <CodePane lang="javascript" source={examples.tags} textSize="21px" />
         </Slide>
         <Slide
           transition={["fade"]}
@@ -412,8 +405,29 @@ export default class Presentation extends Component {
           transition={["fade"]}
           textColor="secondary"
         >
-          <Heading size={4} >Performance?</Heading>
-          <Image src={PERF} />
+          <CodePane lang="html" source={examples.hiw} textSize="19px" />
+        </Slide>
+        <Slide
+          transition={["fade"]}
+          textColor="secondary"
+        >
+          <Heading size={4}>Performance?</Heading>
+          <List>
+            <ListItem>Radium: 40ms</ListItem>
+            <ListItem>Inline styles: 23ms</ListItem>
+            <ListItem>Styled-components: 16ms</ListItem>
+            <ListItem>JSS: 16ms</ListItem>
+            <ListItem>CSS Modules: 14ms</ListItem>
+          </List>
+        </Slide>
+        <Slide
+          transition={["fade"]}
+          bgImageStyle={gradient}
+          textColor="primary"
+        >
+          <Heading size={4} textColor="primary">
+            Features
+          </Heading>
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="secondary" padding={0}>
           <Notes>
@@ -439,9 +453,12 @@ export default class Presentation extends Component {
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="secondary" padding={0}>
           <Heading size={6} textColor="secondary">
-            CSS function
+            Inherit from other components
           </Heading>
-          <CodePane lang="javascript" source={examples.mixins} textSize="19px" />
+          <ComponentPlayground
+            code={snippets.inheritance}
+            scope={{ styled, createGlobalStyle, css }}
+          />
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="secondary" padding={0}>
           <Heading size={6} textColor="secondary">
@@ -467,7 +484,7 @@ export default class Presentation extends Component {
             scope={{ styled, createGlobalStyle, css, ThemeProvider }}
           />
         </Slide>
-        <Slide transition={["fade"]} bgColor="primary" textColor="secondary" padding={0}>
+        {/*<Slide transition={["fade"]} bgColor="primary" textColor="secondary" padding={0}>
           <Notes>
             <h4>Notes</h4>
             <ol>
@@ -478,7 +495,7 @@ export default class Presentation extends Component {
             Testing
           </Heading>
           <CodePane lang="javascript" source={examples.tests} textSize="19px" />
-        </Slide>
+    </Slide>*/}
         <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
           <Notes>
             <h4>Notes</h4>
@@ -486,6 +503,7 @@ export default class Presentation extends Component {
               <li>Все современные редакторы</li>
               <li>Плагины для лучшего дебага, сср</li>
               <li>Плагины для типов</li>
+              <li>Модуль для юнит тестирования</li>
             </ol>
           </Notes>
           <Heading size={6} textColor="secondary" caps>
@@ -496,48 +514,41 @@ export default class Presentation extends Component {
             <Appear><ListItem>Syntax highlights</ListItem></Appear>
             <Appear><ListItem>Babel plugins</ListItem></Appear>
             <Appear><ListItem>Typescript plugin</ListItem></Appear>
+            <Appear><ListItem>Unit testing package(for Jest)</ListItem></Appear>
           </List>
         </Slide>
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Notes>
-            <h4>Notes</h4>
-            <ol>
-              <li>Огромное множество возможностей</li>
-              <li>Много фич из коробки</li>
-              <li>Легче втянуться новому члену команды</li>
-              <li>Удаляем компонент - удаляем CSS</li>
-            </ol>
-          </Notes>
-          <Heading size={6} textColor="secondary" caps>
-            Pros
+        <Slide transition={["fade"]} bgColor="primary" textColor="secondary" padding={0}>
+          <Heading size={6} textColor="secondary">
+            Semantics: HTML + CSS(BEM)
           </Heading>
-          <List>
-            <Appear><ListItem>All of the JS magic!</ListItem></Appear>
-            <Appear><ListItem>SSR support</ListItem></Appear>
-            <Appear><ListItem>Theming out of the box</ListItem></Appear>
-            <Appear><ListItem>Flow/Typescript support</ListItem></Appear>
-            <Appear><ListItem>Autoprefix out of the box</ListItem></Appear>
-            <Appear><ListItem>No dead code</ListItem></Appear>
-            <Appear><ListItem>Namings is not that hard anymore</ListItem></Appear>
-          </List>
+          <CodePane lang="javascript" source={examples.semanticsHtml} textSize="19px" />
         </Slide>
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Notes>
-            <h4>Notes</h4>
-            <ol>
-              <li>Это как jsx в свое время</li>
-              <li>Нужно время на обучение</li>
-              <li>Нужно быть осторожным с входящими данными</li>
-            </ol>
-          </Notes>
-          <Heading size={6} textColor="secondary" caps>
-            Cons
+        <Slide transition={["fade"]} bgColor="primary" textColor="secondary" padding={0}>
+          <Heading size={6} textColor="secondary">
+            Semantics: styled-components
           </Heading>
-          <List>
-            <Appear><ListItem>New mindset to get used to</ListItem></Appear>
-            <Appear><ListItem>Another thing to teach</ListItem></Appear>
-            <Appear><ListItem>Beware of NaN's</ListItem></Appear>
-          </List>
+          <CodePane lang="javascript" source={examples.semanticsSC} textSize="19px" />
+        </Slide>
+        <Slide
+          transition={["fade"]}
+          bgImageStyle={gradient}
+          textColor="primary"
+        >
+          <Heading size={4} textColor="primary">
+            React Native ️support
+          </Heading>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="primary" textColor="secondary">
+          <Image src={reactNative} />
+        </Slide>
+        <Slide
+          transition={["fade"]}
+          bgImageStyle={gradient}
+          textColor="primary"
+        >
+          <Heading size={4} textColor="primary">
+            Conclusion
+          </Heading>
         </Slide>
         <Slide
           transition={["fade"]}
@@ -547,7 +558,7 @@ export default class Presentation extends Component {
           <Heading size={4} textColor="primary">
             Thank you! ❤  ️
           </Heading>
-          Slides: <Link href="styled-talk.surge.sh" textColor="primary" style={{textDecoration:"underline"}}>styled-talk.surge.sh</Link>
+          Slides: <Link href="styled-talk.surge.sh" textColor="primary" style={{ textDecoration: "underline" }}>styled-talk.surge.sh</Link>
         </Slide>
       </Deck>
     );
