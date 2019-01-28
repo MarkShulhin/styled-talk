@@ -80,7 +80,7 @@ module.exports = {
       }],
       include: path.join(__dirname, 'assets')
     }, {
-      test: /\.jpg$/,
+      test: /\.jpe?g$/,
       use: [{
         loader: 'url-loader',
 
