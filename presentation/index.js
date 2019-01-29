@@ -114,6 +114,15 @@ export default class Presentation extends Component {
             width={1098}
           />
         </Slide>
+        <Slide transition={["zoom"]} bgImageStyle={gradient}>
+          <Heading size={1} fit caps lineHeight={1} textColor="secondary">
+            Intro to styled-components{" "}
+            <StyledLogo
+              src="https://www.styled-components.com/static/icon.png"
+              alt="nails"
+            />
+          </Heading>
+        </Slide>
         <Slide transition={["fade"]} textColor="tertiary">
           <Notes>
             <h4>Notes</h4>
@@ -198,12 +207,6 @@ export default class Presentation extends Component {
           <Image src={PREPROC} height={523} width={1200} />
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Notes>
-            <h4>Notes</h4>
-            <ol>
-              <li>Example Card component</li>
-            </ol>
-          </Notes>
           <Heading size={5} lineHeight={1} textColor="secondary">
             Card component
           </Heading>
@@ -465,12 +468,6 @@ export default class Presentation extends Component {
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="secondary" padding={0}>
           <Heading size={6} textColor="secondary">
-            Server side rendering
-          </Heading>
-          <CodePane lang="javascript" source={examples.ssr} textSize="23px" />
-        </Slide>
-        <Slide transition={["fade"]} bgColor="primary" textColor="secondary" padding={0}>
-          <Heading size={6} textColor="secondary">
             Animations
           </Heading>
           <ComponentPlayground
@@ -487,6 +484,12 @@ export default class Presentation extends Component {
             scope={{ styled, createGlobalStyle, css, ThemeProvider }}
           />
         </Slide>
+        <Slide transition={["fade"]} bgColor="primary" textColor="secondary" padding={0}>
+          <Heading size={6} textColor="secondary">
+            Server side rendering
+          </Heading>
+          <CodePane lang="javascript" source={examples.ssr} textSize="23px" />
+        </Slide>
         {/*<Slide transition={["fade"]} bgColor="primary" textColor="secondary" padding={0}>
           <Notes>
             <h4>Notes</h4>
@@ -499,6 +502,16 @@ export default class Presentation extends Component {
           </Heading>
           <CodePane lang="javascript" source={examples.tests} textSize="19px" />
     </Slide>*/}
+
+        <Slide
+          transition={["fade"]}
+          bgImageStyle={gradient}
+          textColor="primary"
+        >
+          <Heading size={4} textColor="primary">
+            Tooling
+          </Heading>
+        </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
           <Notes>
             <h4>Notes</h4>
