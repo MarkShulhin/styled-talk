@@ -75,6 +75,7 @@ export default class Presentation extends Component {
         transitionDuration={500}
         contentHeight={800}
         contentWidth={1000}
+        progress="number"
         theme={theme}
       >
         <Slide transition={["zoom"]} bgImageStyle={gradient}>
