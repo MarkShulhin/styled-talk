@@ -213,13 +213,13 @@ export default class Presentation extends Component {
           <Image src={cardExample} width={500} />
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <CodePane lang="html" source={examples.cardHtml} textSize="17px" />
+          <CodePane lang="jsx" source={examples.cardHtml} textSize="17px" />
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="secondary">
-          <CodePane lang="css" source={examples.cardCss} textSize="17px" />
+          <CodePane lang="jsx" source={examples.cardCss} textSize="17px" />
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="secondary">
-          <CodePane lang="scss" source={examples.sass} textSize="14px" />
+          <CodePane lang="jsx" source={examples.sass} textSize="14px" />
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
           <Notes>
