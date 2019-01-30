@@ -1,22 +1,22 @@
 export default `
 /* CSS */
-.c-menu { /* ... */ }
+.c-card { /* ... */ }
 
-.c-menu__header { /* ... */ }
+.c-card__header { /* ... */ }
 
-.c-menu__image { /* ... */ }
+.c-card__image { /* ... */ }
 
-.c-menu__body { /* ... */ }
+.c-card__body { /* ... */ }
 
-.c-menu__title { /* ... */ }
+.c-card__title { /* ... */ }
 
-.c-menu__subtitle { /* ... */ }
+.c-card__subtitle { /* ... */ }
 
-.c-menu__intro { /* ... */ }
+.c-card__intro { /* ... */ }
 
-.c-menu__footer { /* ... */ }
+.c-card__footer { /* ... */ }
 
 /* horizontal modifier */
-.menu--horizontal { /* ... */ }
-.c-menu--horizontal .menu__item{ /* ... */ }
+.c-card--horizontal { /* ... */ }
+.c-card--horizontal .card__item{ /* ... */ }
 `;
